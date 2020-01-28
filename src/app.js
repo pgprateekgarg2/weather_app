@@ -60,11 +60,11 @@ app.get('/weather',(req,res)=>{
         if(error){
             return res.send({ error })
         } 
-        weather.forecast(latitude,longitude,(error,{forecastData,icon})=>{
+        weather.forecast(latitude,longitude,(error,{icon,summary,preciProbab,temperature,humidity,windSpeed, cloudCover,visiblity})=>{
             if(error){
                 return res.send({error})
             }
-            res.send({forecast:forecastData,
+            res.send({forecast:summary,preciProbab,temperature,humidity,windSpeed,cloudCover,visiblity,
                 place_name,
                 address:req.query.address,
                 icon

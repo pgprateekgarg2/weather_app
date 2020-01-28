@@ -56,7 +56,13 @@ const forecast = (latitude,longitude,callback)=>{
         } else{
             callback(undefined,{
                 icon:body.currently.icon,
-                forecastData:body.daily.data[0].summary+' It is currently '+body.currently.temperature+' out there. There is a '+body.currently.precipProbability+' chance of rain'
+                summary:body.currently.summary,
+                preciProbab:body.currently.precipProbability,
+                temperature: body.currently.temperature,
+                humidity:body.currently.humidity,
+                windSpeed: body.currently.windSpeed,
+                cloudCover:body.currently.cloudCover,
+                visiblity:body.currently.visibility
             })
         }
     })

@@ -9,8 +9,17 @@
 
 const weatherForm = document.querySelector('form')
 const searchElement = document.querySelector('input')
-const messageOne = document.querySelector('#message-1')
-const messageTwo = document.querySelector('#message-2')
+const messageOne = document.querySelector('#msg-1')
+const messageTwo = document.querySelector('#msg-2')
+const messageThree = document.querySelector('#msg-3')
+const messageFour = document.querySelector('#msg-4')
+const messageFive = document.querySelector('#msg-5')
+const messageSix = document.querySelector('#msg-6')
+const messageSeven = document.querySelector('#msg-7')
+const messageEight = document.querySelector('#msg-8')
+const messageNine = document.querySelector('#msg-9')
+
+
 const weatherImage = document.querySelector('canvas')
 
 messageOne.textContent = ''
@@ -26,8 +35,14 @@ weatherForm.addEventListener('submit',(e)=>{
             messageOne.textContent = data.error
             messageTwo.textContent = ''
         } else {
-            messageOne.textContent = data.place_name
-            messageTwo.textContent = data.forecast 
+            messageOne.textContent = 'Location: '+ data.place_name
+            messageSix.textContent = 'Condition: '+ data.forecast
+            messageTwo.textContent = 'Temperature: '+data.temperature
+            messageFour.textContent = 'Humidity: '+data.humidity
+            messageFive.textContent = 'Wind Speed: '+ data.windSpeed
+            messageSeven.textContent = 'Visiblity: '+ data.visiblity
+            messageEight.textContent = 'Cloud Coverage: '+ data.cloudCoverage
+            messageThree.textContent = 'Precipitation Probablity: '+ data.preciProbab
 
             // skycons
             weatherImage.id=data.icon
